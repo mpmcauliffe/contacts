@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "c5dc6e91-05c7-4f42-bfcc-9f120f630a53",
+		"name": "Contact Keeper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "Get Contacts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxYmY1ZTI5YTYwMzAwODQ0Zjk2MDc5In0sImlhdCI6MTU2MjExMzUwNiwiZXhwIjoxNTYyNDczNTA2fQ.LT_12ZGBszoSvmao_vVz61EG4olrKKspp2pcP9-jVh8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						},
+						"description": "get all contacts of a single user"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxYjA5YzE3MTQ1NzkzZGQ4MDM1ZTI4In0sImlhdCI6MTU2MjEyMjI5NCwiZXhwIjoxNTYyNDgyMjk0fQ.t0MesEO5Gly7mbT-PAxNALpoon4QM9sA8Y8bJI5xDjo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sarah Bear\" \n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contacts/5d1bf2599a60300844f96075",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"5d1bf2599a60300844f96075"
+							]
+						},
+						"description": "update an existing contact"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxYjA5YzE3MTQ1NzkzZGQ4MDM1ZTI4In0sImlhdCI6MTU2MjEyMjI5NCwiZXhwIjoxNTYyNDgyMjk0fQ.t0MesEO5Gly7mbT-PAxNALpoon4QM9sA8Y8bJI5xDjo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/contacts/5d1bf2599a60300844f96075",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"5d1bf2599a60300844f96075"
+							]
+						},
+						"description": "delete a single contact"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxYmY1ZTI5YTYwMzAwODQ0Zjk2MDc5In0sImlhdCI6MTU2MjExMzUwNiwiZXhwIjoxNTYyNDczNTA2fQ.LT_12ZGBszoSvmao_vVz61EG4olrKKspp2pcP9-jVh8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Snuggy Bear\",\n\t\"email\": \"snuggy@bear.com\",\n\t\"phone\": \"222-999-1111\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						},
+						"description": "create a new contact"
+					},
+					"response": []
+				}
+			],
+			"description": "POST / GET / PUT / DELETE"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Agee Bear\",\n\t\"email\": \"agee@mail.com\",\n\t\"password\": \"345789\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Registers a user"
+					},
+					"response": []
+				}
+			],
+			"description": "POST"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Get Logged In User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxYjA5YzE3MTQ1NzkzZGQ4MDM1ZTI4In0sImlhdCI6MTU2MjA1MzA1OCwiZXhwIjoxNTYyNDEzMDU4fQ.CCx1Vc9S395MIXI6H_4Gb6t9Ahb5YwqAbkNGbuOg044",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						},
+						"description": "get logged in user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"strange@mail.com\",\n\t\"password\": \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						},
+						"description": "logs in a user"
+					},
+					"response": []
+				}
+			],
+			"description": "POST / GET"
+		}
+	]
+}

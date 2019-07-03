@@ -28,7 +28,7 @@ router.post(
     '/', 
     [ 
         auth, 
-        check('name', 'Name is required.').not().isEmpty(), 
+        check('name', 'Name is required.').not().isEmpty() 
     ], 
     async (req, res) => {
         const errors = validationResult(req)
@@ -82,7 +82,7 @@ router.put('/:id', auth, async (req, res) => {
             { new: true }
         )
 
-        
+
         res.json(contact)
     } catch (err) {
         console.error(err.message)
@@ -94,11 +94,26 @@ router.put('/:id', auth, async (req, res) => {
 // @route       DELETE api/contacts/:id
 // @desc        Delete contact
 // @access      Private
-router.delete('/:id', (req, res) => {
-    res.send('delete contact')
+router.delete('/:id', auth, async (req, res) => {
+    try {
+        let contact = await Contact.findById(req.params.id)
+        
+        if(!contact) { res.send(404).json({ msg: 'Contact not found.' }) }
+        // ensure ownership
+        if (contact.user.toString() !== req.user.id) { 
+            return res.status(401).json({ msg: 'Not authorized.' }) 
+        }
+
+        await Contact.findByIdAndRemove(req.params.id)
+
+        res.json({ msg: 'Contact removed' })
+        
+        res.json(contact)
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send('Server Error')
+    }
 })
-
-
 
 
 module.exports = router
