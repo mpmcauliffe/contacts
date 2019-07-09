@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 import { Register, Login } from './components/auth'
 import { About, Home, } from './components/pages'
 import { Navbar, Alerts } from './components/layouts'
+import PrivateRoute from './components/routing/PrivateRoute'
 import './App.css'
 
 
@@ -26,8 +27,8 @@ const App = () => {
                             <div className="container">
                                 <Alerts />
                                 <Switch>
-                                    <Route 
-                                        exact 
+                                    <PrivateRoute
+                                        exact
                                         path='/'
                                         component={Home} />
 
