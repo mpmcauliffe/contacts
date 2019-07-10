@@ -16,9 +16,9 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/contacts', require('./routes/contacts'))
 
 
-app.get('/', (req, res) => {
-    res.json({ msg: 'welcome to the contacts app'})
-})
+// app.get('/', (req, res) => {
+//     res.json({ msg: 'welcome to the contacts app'})
+// })
 
 
 // serve static assets in production
