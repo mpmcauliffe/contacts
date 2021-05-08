@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     const authContext = useContext(AuthContext)
     const { loading, isAuthenticated, } = authContext
 
-
+    console.log(isAuthenticated)
     return (
         <Route 
             { ...rest } 
